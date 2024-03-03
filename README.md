@@ -45,60 +45,20 @@ yarn build
 
 #### Интерфейс IProduct
 
-```
-interface IProduct {
-    id: string;
-    description: string;
-    image: string;
-    title: string;
-    category: string;
-    price: number | null;
-}
-```
-
 Хранит данные о товаре, приходящие с сервера
 
 #### Интерфейс IBasket
-
-```
-interface IBasket {
-    items: string[];
-    total: number;
-}
-```
 
 Хранит данные, необъодимые для отображения товаров, находящихся в корзине
 
 #### Интерфейс IOrder
 
-```
-interface IOrder {
-    payment: 'cash' | 'card';
-    email: string;
-    phone: string;
-    address: string;
-    items: string[];
-    total: number;
-}
-```
-
 Хранит данные, которые будут отправляться на сервер при оформлении заказа
 
 #### Тип OrderType
 
-```
-type OrderForm = Omit<IOrder, 'total' | 'items'>;
-```
-
 Используется для хранения данных заказа при его оформлении через форму
 
 #### Интерфейс IOrderResult
-
-```
-export interface IOrderResult {
-    id: string;
-    total: number;
-}
-```
 
 Хранит данные полученные с сервера после оформления заказа
