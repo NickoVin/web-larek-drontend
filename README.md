@@ -41,9 +41,9 @@ npm run build
 yarn build
 ```
 
-#### Описание данных
+## Описание данных
 
-##### Интерфейс IProduct
+#### Интерфейс IProduct
 
 ```
 interface IProduct {
@@ -58,7 +58,7 @@ interface IProduct {
 
 Интерфейс хранит данные о товаре, приходящие с сервера
 
-##### Интерфейс IBasket
+#### Интерфейс IBasket
 
 ```
 interface IBasket {
@@ -69,7 +69,7 @@ interface IBasket {
 
 Интерфес хранит данные, необъодимые для отображения товаров, находящихся в корзине
 
-##### Интерфейс IOrder
+#### Интерфейс IOrder
 
 ```
 interface IOrder {
@@ -84,7 +84,7 @@ interface IOrder {
 
 Интерфейс хранит данные, которые будут отправляться на сервер при оформлении заказа
 
-##### Тип OrderType
+#### Тип OrderType
 
 ```
 type OrderForm = Omit<IOrder, 'total' | 'items'>;
@@ -92,7 +92,7 @@ type OrderForm = Omit<IOrder, 'total' | 'items'>;
 
 Используется для хранения данных заказа при его оформлении через форму
 
-##### Интерфейс IOrderResult
+#### Интерфейс IOrderResult
 
 ```
 export interface IOrderResult {
