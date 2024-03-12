@@ -92,9 +92,7 @@ events.on('basket:change', () => {
         const item = appData.items.find(item => item.id == id);
         const card = new Card(cloneTemplate(cardBasketTemplate),
         {
-            onClick: () => {
-                appData.removeFromBasket(item);
-            } 
+            onClick: () => appData.removeFromBasket(item)
         })
 
         return card.render(item);
@@ -156,7 +154,7 @@ events.on('contacts:submit', () => {
     api.orderProducts(appData.order)
         .then(result => {
             const success = new Success(cloneTemplate(successTemplate), {
-                onClick: () => { modal.close() }
+                onClick: () => modal.close()
             })
 
             appData.clearBasket();
