@@ -30,6 +30,11 @@ export interface IOrder {
 
 export type OrderForm = Omit<IOrder, 'total' | 'items'>;
 
+export type OrderField = {
+    field: keyof OrderForm;
+    value: string
+}
+
 // Этот интерфейс получает данные с сервера после оформления заказа (итоговый попап с завершением заказа)
 export interface IOrderResult {
     id: string;

@@ -14,7 +14,7 @@ export class Basket extends View<IBasketView> {
 
     protected _list: HTMLElement;
     protected _total: HTMLElement;
-    protected _button: HTMLElement;
+    protected _button: HTMLButtonElement;
 
     constructor(protected events: EventEmitter) {
         super(events, cloneTemplate(Basket.template));
@@ -35,10 +35,12 @@ export class Basket extends View<IBasketView> {
     set items(items: HTMLElement[]) {
         if (items.length) {
             this._list.replaceChildren(...items);
+            this._button.disabled = false;
         } else {
             this._list.replaceChildren(createElement<HTMLParagraphElement>('p', {
                 textContent: 'Корзина пуста'
             }));
+            this._button.disabled = true;
         }
     }
 

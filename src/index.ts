@@ -7,7 +7,7 @@ import { cloneTemplate, ensureElement } from './utils/utils';
 import { Modal } from './components/common/Modal';
 import { Page } from './components/Page';
 import { Basket } from './components/common/Basket'
-import { IBasket, IProduct, OrderForm } from './types';
+import { OrderField, IProduct, OrderForm } from './types';
 import { Card } from './components/Card';
 import { Order } from './components/Order';
 import { Contacts } from './components/Contacts';
@@ -122,14 +122,14 @@ events.on('order:open', () => {
 
 events.on(
     /^order\..*:change$/,
-    (data: {field: keyof OrderForm; value: string }) => {
+    (data: OrderField) => {
         appData.setOrderField(data.field, data.value);
     }
 );
 
 events.on(
     /^contacts\..*:change$/,
-    (data: {field: keyof OrderForm; value: string }) => {
+    (data: OrderField) => {
         appData.setOrderField(data.field, data.value);
     }
 );
